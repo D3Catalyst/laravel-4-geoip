@@ -75,3 +75,7 @@ Get timezone of the visitor
 Get ISP of the visitor
 
     GeoIP::getIsp();  // returns "Internet Service provider"
+
+Get ALL geo information of visitor
+
+    GeoIP::getAll();  // returns array with all information
