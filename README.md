@@ -3,7 +3,7 @@ laravel-4-geoip
 
 [![Build Status](http://www.d3catalyst.com/l4-geoip.svg)](http://www.d3catalyst.com/l4-geoip)  ![stable](http://www.d3catalyst.com/stable-v1.0.1-blue.svg)
 
-Laravel 4 Library for calling http://freegeoip.net/ API.
+Laravel 4 Library for calling http://ip-api.com/ API.
 
 In contrary to all other packages wherein it requires that you have the geoip database in your filesystem, this library calls a free service
 So you dont really have to worry about downloading and maintaining geoip data from Maxmind in your own server.
