@@ -144,6 +144,19 @@ class GeoIP{
         return $this->geoip_data->$name;
    }
 
+   /**
+  * Get all geo information
+  *
+  * @return string
+  */
+  private function getAll(){      
+        
+        if($this->geoip_data == NULL)
+          $this->retrievefromCache();
+
+        return $this->geoip_data;
+   }
+
   /**
   * check if the Cache class exists and use caching mechanism if there is, otherwise just call the API directly.
   *
