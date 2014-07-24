@@ -35,6 +35,9 @@ Facade
 Usage
 =====
 
+Set IP of the visitor
+
+    GeoIP::setIp("127.0.0.1");  // Optional set ip, when not set this take automatical from REMOTE_HOST
 
 Get country of the visitor
 
