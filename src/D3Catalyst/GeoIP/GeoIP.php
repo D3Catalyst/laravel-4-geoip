@@ -149,7 +149,7 @@ class GeoIP{
   *
   * @return string
   */
-  private function getAll(){      
+  public function getAll(){      
         
         if($this->geoip_data == NULL)
           $this->retrievefromCache();
