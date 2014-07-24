@@ -71,3 +71,7 @@ Get longitude of the visitor
 Get timezone of the visitor
 
     GeoIP::getTimezone();  // returns "America/Mexico_City"
+
+Get ISP of the visitor
+
+    GeoIP::getIsp();  // returns "Internet Service provider"
