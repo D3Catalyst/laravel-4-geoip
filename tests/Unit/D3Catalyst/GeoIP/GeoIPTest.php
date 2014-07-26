@@ -16,7 +16,7 @@ class GeoIPTest extends PHPUnit_Framework_TestCase{
   *
   */
   public function testIsThereAnySyntaxError(){
-  	$var = new Buonzz\GeoIP\GeoIP;
+  	$var = new D3Catalyst\GeoIP\GeoIP;
   	$this->assertTrue(is_object($var));
   	unset($var);
   }
@@ -29,7 +29,7 @@ class GeoIPTest extends PHPUnit_Framework_TestCase{
   *
   */
   public function testgetCountry(){
-  	$var = new Buonzz\GeoIP\GeoIP;
+  	$var = new D3Catalyst\GeoIP\GeoIP;
     $var->setIP('187.247.1.177');
   	$this->assertTrue($var->getCountry() == 'Mexico');
   	unset($var);
