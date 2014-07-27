@@ -221,7 +221,7 @@ class GeoIP{
     */
     private function getClientIp() {
         $ipaddress = '';
-        if ($_SERVER['HTTP_CLIENT_IP'])
+        if (isset($_SERVER['HTTP_CLIENT_IP']) && $_SERVER['HTTP_CLIENT_IP'])
             $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
         else if($_SERVER['HTTP_X_FORWARDED_FOR'])
             $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
