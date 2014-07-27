@@ -1,7 +1,7 @@
 laravel-4-geoip
 ===============
 
-[![Build Status](http://www.d3catalyst.com/l4-geoip.svg)](http://www.d3catalyst.com/l4-geoip)  ![stable](http://www.d3catalyst.com/stable-v1.0.1-blue.svg)
+[![Build Status](https://api.travis-ci.org/D3Catalyst/laravel-4-geoip.svg)](https://travis-ci.org/D3Catalyst/laravel-4-geoip)  ![stable](http://img.shields.io/badge/stable-v%201.0.3-blue.svg)
 
 Laravel 4 Library for calling http://ip-api.com/ API.
 
