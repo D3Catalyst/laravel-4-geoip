@@ -30,7 +30,9 @@ class GeoIP{
   * @return void
   */
   public function __construct(){
-    $this->ip = $this->getClientIp();
+    $ip = $this->getClientIp();
+    if($ip!==false)
+      $this->ip = $ip;
   }
 
   /**
@@ -217,7 +219,7 @@ class GeoIP{
     *
     * @return String Visitor IP
     */
-    private getClientIp() {
+    private function getClientIp() {
         $ipaddress = '';
         if ($_SERVER['HTTP_CLIENT_IP'])
             $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
