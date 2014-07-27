@@ -30,8 +30,7 @@ class GeoIP{
   * @return void
   */
   public function __construct(){
-      if(isset($_SERVER['REMOTE_ADDR']))
-          $this->ip = $_SERVER['REMOTE_ADDR'];     
+    $this->ip = $this->getClientIp();
   }
 
   /**

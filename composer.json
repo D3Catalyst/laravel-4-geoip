@@ -1,6 +1,6 @@
 {
     "name": "d3catalyst/l4-geoip",
-    "description": "Laravel 4 Library for detecting geogpraphical location info",
+    "description": "Laravel 4 Library for detecting geogpraphical location info.",
     "keywords": ["d3catalyst.com", "geoip", "ip to location", "retrieve location", "no local geodatabase required", "Ip information"],
     "license": "MIT",
     "homepage": "http://laravel.d3catalyst.com/l4-geoip/",

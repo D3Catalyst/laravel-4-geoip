@@ -9,8 +9,6 @@ use Illuminate\Support\Facades\Facade;
 *
 *  @author Darwin Biler <buonzz@gmail.com>
 *
-*  Edited for me
-*  @author Ricardo Madrigal <soporte@d3catalyst.com>
 */
 class GeoIP extends Facade{
    /**

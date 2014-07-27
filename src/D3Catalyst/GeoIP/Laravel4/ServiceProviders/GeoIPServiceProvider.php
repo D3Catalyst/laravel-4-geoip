@@ -12,8 +12,6 @@ use D3Catalyst\GeoIP\GeoIP as GeoIP;
 *  
 *  @author Darwin Biler <buonzz@gmail.com>
 *
-*  Edited for me
-*  @author Ricardo Madrigal <soporte@d3catalyst.com>
 */
 class GeoIPServiceProvider extends ServiceProvider{
 	/**
