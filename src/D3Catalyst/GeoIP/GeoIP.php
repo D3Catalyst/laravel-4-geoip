@@ -1,11 +1,14 @@
 <?php namespace D3Catalyst\GeoIP;
 
 /**
-*  Contains all the method to retrieve data from ip-api.com.com.
+*  Contains all the method to retrieve data from ip-api.com.
 *
 *  This contains the geoip data as well all the marshalling mechanism from 
 *  the web service.
 *
+*  @author Darwin Biler <buonzz@gmail.com>
+*
+*  Edited for me
 *  @author Ricardo Madrigal <soporte@d3catalyst.com>
 */
 class GeoIP{
@@ -192,7 +195,7 @@ class GeoIP{
    function resolve($ip){
       
       $url = 'http://ip-api.com/json/'.$ip;
-      $timeout = 30; // set to zero for no timeout
+      $timeout = 30; // Timeout
       
       $ch = curl_init();
       curl_setopt ($ch, CURLOPT_URL, $url);
@@ -208,6 +211,29 @@ class GeoIP{
           throw new \Exception("Problems in retrieving data from http://ip-api.com");
 
       return $data;
+    }
+
+    /**
+    * Get real IP of visitor
+    *
+    * @return String Visitor IP
+    */
+    private getClientIp() {
+        $ipaddress = '';
+        if ($_SERVER['HTTP_CLIENT_IP'])
+            $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
+        else if($_SERVER['HTTP_X_FORWARDED_FOR'])
+            $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        else if($_SERVER['HTTP_X_FORWARDED'])
+            $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
+        else if($_SERVER['HTTP_FORWARDED_FOR'])
+            $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
+        else if($_SERVER['HTTP_FORWARDED'])
+            $ipaddress = $_SERVER['HTTP_FORWARDED'];
+        else if($_SERVER['REMOTE_ADDR'])
+            $ipaddress = $_SERVER['REMOTE_ADDR'];
+        else
+            $ipaddress = false;
     }
 
 }

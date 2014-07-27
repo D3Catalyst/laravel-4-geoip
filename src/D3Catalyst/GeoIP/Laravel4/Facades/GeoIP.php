@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Facade;
 *
 *  Use this to provide a facade for Laravel Application
 *
+*  @author Darwin Biler <buonzz@gmail.com>
+*
+*  Edited for me
 *  @author Ricardo Madrigal <soporte@d3catalyst.com>
 */
 class GeoIP extends Facade{

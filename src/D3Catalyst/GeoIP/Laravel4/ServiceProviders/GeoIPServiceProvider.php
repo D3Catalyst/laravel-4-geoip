@@ -10,6 +10,10 @@ use D3Catalyst\GeoIP\GeoIP as GeoIP;
 *  like App::make('GeoIP');
 *  the same binding is also used by facade to resolve the class
 *  
+*  @author Darwin Biler <buonzz@gmail.com>
+*
+*  Edited for me
+*  @author Ricardo Madrigal <soporte@d3catalyst.com>
 */
 class GeoIPServiceProvider extends ServiceProvider{
 	/**
