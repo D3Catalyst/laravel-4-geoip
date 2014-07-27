@@ -20,7 +20,8 @@ Requirements
 Installation
 ============
 
-	composer require d3catalyst/l4-geoip:dev-master
+    Add in composer.json
+    "d3catalyst/l4-geoip": "dev-master"
 
 Add the service provider and facade in your config/app.php
 
