@@ -83,3 +83,5 @@ Get ISP of the visitor
 Get ALL geo information of visitor
 
     GeoIP::getAll();  // returns array with all information
+
+.
