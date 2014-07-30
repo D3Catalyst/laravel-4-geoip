@@ -1,7 +1,7 @@
 laravel-4-geoip
 ===============
 
-[![Build Status](https://api.travis-ci.org/D3Catalyst/laravel-4-geoip.svg)](https://travis-ci.org/D3Catalyst/laravel-4-geoip) [![Latest Stable Version](https://poser.pugx.org/d3catalyst/l4-geoip/v/stable.svg)](https://packagist.org/packages/d3catalyst/l4-geoip) [![Total Downloads](https://poser.pugx.org/d3catalyst/l4-geoip/downloads.svg)](https://packagist.org/packages/d3catalyst/l4-geoip) [![Latest Unstable Version](https://poser.pugx.org/d3catalyst/l4-geoip/v/unstable.svg)](https://packagist.org/packages/d3catalyst/l4-geoip) [![License](https://poser.pugx.org/d3catalyst/l4-geoip/license.svg)](https://packagist.org/packages/d3catalyst/l4-geoip) [![Coverage Status](https://img.shields.io/coveralls/D3Catalyst/laravel-4-geoip.svg)](https://coveralls.io/r/D3Catalyst/laravel-4-geoip)
+[![Build Status](https://api.travis-ci.org/D3Catalyst/laravel-4-geoip.svg)](https://travis-ci.org/D3Catalyst/laravel-4-geoip) [![Latest Stable Version](https://poser.pugx.org/d3catalyst/l4-geoip/v/stable.svg)](https://packagist.org/packages/d3catalyst/l4-geoip) [![Total Downloads](https://poser.pugx.org/d3catalyst/l4-geoip/downloads.svg)](https://packagist.org/packages/d3catalyst/l4-geoip) [![Latest Unstable Version](https://poser.pugx.org/d3catalyst/l4-geoip/v/unstable.svg)](https://packagist.org/packages/d3catalyst/l4-geoip) [![License](https://poser.pugx.org/d3catalyst/l4-geoip/license.svg)](https://packagist.org/packages/d3catalyst/l4-geoip) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/D3Catalyst/laravel-4-geoip/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/D3Catalyst/laravel-4-geoip/?branch=master)
 
 Laravel 4 Library for calling http://ip-api.com/ API.
 
