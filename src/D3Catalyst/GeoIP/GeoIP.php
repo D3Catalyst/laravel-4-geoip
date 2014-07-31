@@ -101,7 +101,7 @@ class GeoIP{
   /**
   * get the latitude of the location.
   *
-  * @return double
+  * @return string
   */
   public function getLatitude(){
        return $this->getItem('lat');
@@ -110,7 +110,7 @@ class GeoIP{
   /**
   * get the longitude of the location.
   *
-  * @return double
+  * @return string
   */
   public function getLongitude(){
       return $this->getItem('lon');
@@ -138,6 +138,7 @@ class GeoIP{
   /**
   * generic property retriever.
   *
+  * @param string $name get cached item
   * @return string
   */
   private function getItem($name){      
@@ -189,8 +190,7 @@ class GeoIP{
   /**
   * call the ip-api.com for data, retrieve it as JSON and convert it to stdclass.
   *
-  * @todo make this thing use Guzzle instead, you novice kid!
-  *
+  * @param string $ip ip to check
   * @return void
   */
    function resolve($ip){
