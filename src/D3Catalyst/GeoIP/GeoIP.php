@@ -18,7 +18,7 @@ class GeoIP{
   private $geoip_data = NULL;
 
   /**  @var string $ip contains the IP of the current visitor */
-  private $ip;
+  private $ip = NULL;
 
 
   /**
@@ -195,8 +195,9 @@ class GeoIP{
   */
    function resolve($ip){
       
-      $url = 'http://ip-api.com/json/'.$ip;
-      $timeout = 30; // Timeout
+      $url      = 'http://ip-api.com/json/'.$ip;
+      $timeout  = 30; // Timeout
+      $data     = NULL;
       
       $ch = curl_init();
       curl_setopt ($ch, CURLOPT_URL, $url);
@@ -220,21 +221,20 @@ class GeoIP{
     * @return String Visitor IP
     */
     private function getClientIp() {
-        $ipaddress = '';
         if (isset($_SERVER['HTTP_CLIENT_IP']) && !empty($_SERVER['HTTP_CLIENT_IP']))
-            $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
+            return $_SERVER['HTTP_CLIENT_IP'];
         else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']) && !empty($_SERVER['HTTP_X_FORWARDED_FOR']))
-            $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
+            return $_SERVER['HTTP_X_FORWARDED_FOR'];
         else if(isset($_SERVER['HTTP_X_FORWARDED']) && !empty($_SERVER['HTTP_X_FORWARDED']))
-            $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
+            return $_SERVER['HTTP_X_FORWARDED'];
         else if(isset($_SERVER['HTTP_FORWARDED_FOR']) && !empty($_SERVER['HTTP_FORWARDED_FOR']))
-            $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
+            return $_SERVER['HTTP_FORWARDED_FOR'];
         else if(isset($_SERVER['HTTP_FORWARDED']) && !empty($_SERVER['HTTP_FORWARDED']))
-            $ipaddress = $_SERVER['HTTP_FORWARDED'];
+            return $_SERVER['HTTP_FORWARDED'];
         else if(isset($_SERVER['REMOTE_ADDR']) && !empty($_SERVER['REMOTE_ADDR']))
-            $ipaddress = $_SERVER['REMOTE_ADDR'];
+            return $_SERVER['REMOTE_ADDR'];
         else
-            $ipaddress = false;
+            return false;
     }
 
 }
