@@ -3,7 +3,7 @@
 /**
 *  Contains all the method to retrieve data from ip-api.com.
 *
-*  This contains the geoip data as well all the marshalling mechanism from 
+*  This contains the geoip data as well all the marshalling mechanism from
 *  the web service.
 *
 *  @author Darwin Biler <buonzz@gmail.com>
@@ -125,7 +125,7 @@ class GeoIP{
      return $this->getItem('timezone');
    }
 
-  
+
   /**
   * get the ISP.
   *
@@ -141,12 +141,15 @@ class GeoIP{
   * @param string $name get cached item
   * @return string
   */
-  private function getItem($name){      
-        
+  private function getItem($name){
+
         if($this->geoip_data == NULL)
           $this->retrievefromCache();
 
-        return $this->geoip_data->$name;
+		if(isset($this->geoip_data->$name)){
+			return $this->geoip_data->$name;
+		}
+        return "";
    }
 
    /**
@@ -154,8 +157,8 @@ class GeoIP{
   *
   * @return string
   */
-  public function getAll(){      
-        
+  public function getAll(){
+
         if($this->geoip_data == NULL)
           $this->retrievefromCache();
 
@@ -167,19 +170,19 @@ class GeoIP{
   *
   * @return void
   */
-  private function retrievefromCache(){      
-      
+  private function retrievefromCache(){
+
       if (class_exists('\\Cache'))
       {
-        
-        $cache_key = 'l4-geoip-'. $this->ip;     
+
+        $cache_key = 'l4-geoip-'. $this->ip;
 
         if (\Cache::has($cache_key))
              $this->geoip_data = \Cache::get($cache_key);
           else
           {
-              $this->geoip_data = $this->resolve($this->ip); 
-              \Cache::put($cache_key, $this->geoip_data , 60*60);       
+              $this->geoip_data = $this->resolve($this->ip);
+              \Cache::put($cache_key, $this->geoip_data , 60*60);
           }
       }
       else
@@ -194,19 +197,19 @@ class GeoIP{
   * @return void
   */
    function resolve($ip){
-      
+
       $url      = 'http://ip-api.com/json/'.$ip;
       $timeout  = 30; // Timeout
-      
+
       $ch = curl_init($url);
       curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
       curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
-      
-      $file_contents = curl_exec($ch);    
+
+      $file_contents = curl_exec($ch);
       curl_close($ch);
-      
+
       $data = json_decode($file_contents);
-      
+
       if($data == NULL)
           throw new \Exception("Problems in retrieving data from http://ip-api.com");
 
